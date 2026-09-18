@@ -1,16 +1,79 @@
-# React + Vite
+# 🎬 Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive Movie Explorer web application built with React. Users can browse movies and shows, search by title, and view detailed information in an interactive modal.
 
-Currently, two official plugins are available:
+## 🛠️ Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- HTML
+- CSS
+- JavaScript
+- React
+- TVMaze API
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive Home Page
+- Navigation bar with Home and Movies links
+- Hero section with movie-themed background
+- Browse movies and shows from TVMaze API
+- Search movies/shows by title
+- Reusable movie cards
+- Movie/show rating
+- Release date
+- Genre information
+- Movie details modal
+- Modal close button
+- Responsive design for mobile, tablet, and desktop
 
-## Expanding the Oxlint configuration
+## 🏠 Home Page
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The Home Page contains:
+
+- Navbar
+- Hero section
+- Explore Now button
+- Footer
+
+## 🎬 Movies Page
+
+The Movies Page allows users to:
+
+- Browse available shows
+- Search by title
+- View rating
+- View release date
+- View genres
+- Open detailed information
+
+## 🔍 Search
+
+Users can type a movie or show name in the search box. The displayed results are filtered according to the search text.
+
+## 📖 Movie Details
+
+Clicking the **See Details** button opens a modal containing:
+
+- Poster
+- Title
+- Rating
+- Release date
+- Genre
+- Summary
+
+## 📱 Responsive Design
+
+The application is designed to work on:
+
+- Mobile devices
+- Tablets
+- Desktop screens
+
+## 🌐 API
+
+This project uses the TVMaze API to retrieve show information.
+
+API:
+
+https://api.tvmaze.com/shows
+
+.
