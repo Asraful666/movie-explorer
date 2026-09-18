@@ -1,16 +1,12 @@
 import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 
 function Home() {
   return (
     <>
       <Navbar />
-
-      <main>
-        <h1>Movie Explorer</h1>
-        <p>Discover your favorite movies and shows.</p>
-      </main>
-
+      <Hero />
       <Footer />
     </>
   );
