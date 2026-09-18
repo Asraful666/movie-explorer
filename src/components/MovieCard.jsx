@@ -2,7 +2,10 @@ function MovieCard({ movie }) {
   return (
     <div className="movie-card">
       <img
-        src={movie.image?.medium}
+        src={
+          movie.image?.medium ||
+          "https://via.placeholder.com/300x400?text=No+Image"
+        }
         alt={movie.name}
       />
 
@@ -10,11 +13,18 @@ function MovieCard({ movie }) {
         <h2>{movie.name}</h2>
 
         <p>
-          ⭐ {movie.rating?.average || "N/A"}
+          ⭐ Rating: {movie.rating?.average || "N/A"}
         </p>
 
         <p>
-          📅 {movie.premiered || "Unknown"}
+          📅 Released: {movie.premiered || "Unknown"}
+        </p>
+
+        <p>
+          🎭 Genre:{" "}
+          {movie.genres?.length
+            ? movie.genres.join(", ")
+            : "N/A"}
         </p>
 
         <button>See Details</button>
