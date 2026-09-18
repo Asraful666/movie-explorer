@@ -323,3 +323,90 @@ body {
 
   cursor: pointer;
 }
+
+
+/*RESPONSIVE DESIGN*/
+
+@media (max-width: 1000px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .movie-card img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movies-page {
+    padding: 40px 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 45px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .movies-page {
+    padding: 30px 5%;
+  }
+
+  .movies-page h1 {
+    font-size: 28px;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card img {
+    height: 400px;
+  }
+
+  .search-input {
+    margin-bottom: 30px;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .modal img {
+    max-height: 300px;
+  }
+}
