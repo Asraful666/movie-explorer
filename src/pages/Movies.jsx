@@ -4,6 +4,7 @@ import MovieCard from "../components/MovieCard";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -26,6 +27,10 @@ function Movies() {
       });
   }, []);
 
+  const filteredMovies = movies.filter((movie) =>
+    movie.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <>
       <Navbar />
@@ -33,13 +38,21 @@ function Movies() {
       <main className="movies-page">
         <h1>Explore Movies</h1>
 
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          className="search-input"
+        />
+
         {loading && <p>Loading movies...</p>}
 
         {error && <p>{error}</p>}
 
         {!loading && !error && (
           <div className="movie-grid">
-            {movies.map((movie) => (
+            {filteredMovies.map((movie) => (
               <MovieCard
                 key={movie.id}
                 movie={movie}
@@ -47,6 +60,12 @@ function Movies() {
             ))}
           </div>
         )}
+
+        {!loading &&
+          !error &&
+          filteredMovies.length === 0 && (
+            <p>No movies found.</p>
+          )}
       </main>
     </>
   );
