@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import MovieCard from "../components/MovieCard";
+import MovieModal from "../components/MovieModal";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -28,7 +30,9 @@ function Movies() {
   }, []);
 
   const filteredMovies = movies.filter((movie) =>
-    movie.name.toLowerCase().includes(search.toLowerCase())
+    movie.name
+      .toLowerCase()
+      .includes(search.toLowerCase())
   );
 
   return (
@@ -42,7 +46,9 @@ function Movies() {
           type="text"
           placeholder="Search movies..."
           value={search}
-          onChange={(event) => setSearch(event.target.value)}
+          onChange={(event) =>
+            setSearch(event.target.value)
+          }
           className="search-input"
         />
 
@@ -56,6 +62,9 @@ function Movies() {
               <MovieCard
                 key={movie.id}
                 movie={movie}
+                onDetails={() =>
+                  setSelectedMovie(movie)
+                }
               />
             ))}
           </div>
@@ -66,6 +75,13 @@ function Movies() {
           filteredMovies.length === 0 && (
             <p>No movies found.</p>
           )}
+
+        {selectedMovie && (
+          <MovieModal
+            movie={selectedMovie}
+            onClose={() => setSelectedMovie(null)}
+          />
+        )}
       </main>
     </>
   );

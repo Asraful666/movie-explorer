@@ -1,4 +1,4 @@
-function MovieCard({ movie }) {
+function MovieCard({ movie, onDetails }) {
   return (
     <div className="movie-card">
       <img
@@ -13,11 +13,13 @@ function MovieCard({ movie }) {
         <h2>{movie.name}</h2>
 
         <p>
-          ⭐ Rating: {movie.rating?.average || "N/A"}
+          ⭐ Rating:{" "}
+          {movie.rating?.average || "N/A"}
         </p>
 
         <p>
-          📅 Released: {movie.premiered || "Unknown"}
+          📅 Released:{" "}
+          {movie.premiered || "Unknown"}
         </p>
 
         <p>
@@ -27,7 +29,9 @@ function MovieCard({ movie }) {
             : "N/A"}
         </p>
 
-        <button>See Details</button>
+        <button onClick={onDetails}>
+          See Details
+        </button>
       </div>
     </div>
   );
